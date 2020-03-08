@@ -36,11 +36,11 @@
    <url>git@github.com:drinkjava2/temp.git</url>
  </scm>
 
- <properties>
+<properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding> 
-        <!-- Release on JDK1.8 -->
+        <!--  JDK1.8 -->
         <version.java>1.8</version.java>
         <version.javadoc>8</version.javadoc>
         <version.compiler-plugin>3.3</version.compiler-plugin>
@@ -52,30 +52,84 @@
         <version.source-plugin>2.4</version.source-plugin>
         <version.javadoc-plugin>2.10.3</version.javadoc-plugin>
         <version.gpg-plugin>1.6</version.gpg-plugin>
- </properties>  
+
+        <spring.version>4.3.26.RELEASE</spring.version>
+</properties>  
 
  <dependencies>  
-     <!-- JUnit -->
-     <dependency>
-       <groupId>junit</groupId>
-       <artifactId>junit</artifactId>
-       <version>4.11</version>
-       <scope>test</scope>
-    </dependency> 
+	<!-- JUnit for unit test -->
+	<dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.11</version>
+	<scope>test</scope>
+	</dependency>
+	
+	<!-- H2 Memory database for unit test -->
+	<dependency>
+	<groupId>com.h2database</groupId>
+	<artifactId>h2</artifactId>
+	<version>1.3.176</version>
+	<scope>test</scope>
+	</dependency>   
 
-    <!-- jSqlBox -->
-    <dependency>
-      <groupId>com.github.drinkjava2</groupId>
-       <artifactId>jsqlbox</artifactId> 
-       <version>4.0.3.jre8</version> <!-- Java8版 -->
-    </dependency>
+	<!-- HikariCP datasource pool -->
+	<dependency>
+	<groupId>com.zaxxer</groupId>
+	<artifactId>HikariCP</artifactId> 
+	<version>3.4.2</version>  
+	<scope>test</scope>
+	</dependency>   
+ 
+	<!-- Guice is a IOC/AOP tool-->
+	<dependency>
+	  <groupId>com.google.inject</groupId>
+	  <artifactId>guice</artifactId>
+	  <version>4.2.0</version>
+          <scope>test</scope>
+	</dependency>  
 
-    <!-- h2 -->
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId> <!--H2内存数据库-->
-      <version>1.3.176</version>
-    </dependency> 
+	<!-- jBeanBox is another IOC/AOP tool-->
+	<dependency>
+	    <groupId>com.github.drinkjava2</groupId>
+	    <artifactId>jbeanbox</artifactId>
+	    <version>4.0.0</version>
+	    <scope>test</scope>
+	</dependency>
+
+
+	<!-- Spring IOC/AOP/TX/JDBC dependencies -->
+	 <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>${spring.version}</version>
+	    <scope>test</scope>
+	  </dependency>
+	  <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>${spring.version}</version>
+	    <scope>test</scope>
+	  </dependency>
+	  <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>${spring.version}</version>
+	    <scope>test</scope>
+	  </dependency>
+	  <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	    <version>${spring.version}</version>
+	    <scope>test</scope>
+	  </dependency>
+	  <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>${spring.version}</version>
+	    <scope>test</scope>
+	  </dependency> 
+
 	
  </dependencies> 
 
