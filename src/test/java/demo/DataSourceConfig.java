@@ -1,9 +1,14 @@
-package demo.jbeanbox;
+package demo;
 
 import com.github.drinkjava2.jbeanbox.BeanBox;
 import com.zaxxer.hikari.HikariDataSource;
 
 public class DataSourceConfig {
+
+	// Default DataSource
+	public static class DataSource extends H2DataSourceCfg {
+
+	}
 
 	// H2
 	public static class H2DataSourceCfg extends MySqlDataSourceBox {
